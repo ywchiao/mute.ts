@@ -1,0 +1,34 @@
+{
+  "name": "mute",
+  "version": "0.1.0",
+  "description": "An electron based  mud client for Muted.",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "format": "prettier-eslint --write 'src/**/*.ts'",
+    "lint": "eslint --fix src > log/eslint.log",
+    "start": "npm run build && electron ./out/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ywchiao/mute.ts.git"
+  },
+  "keywords": [
+    "Electron",
+    "mud",
+    "typescript"
+  ],
+  "author": "Yiwei Chiao",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^1.10.2",
+    "@typescript-eslint/parser": "^1.10.2",
+    "electron": "^5.0.5",
+    "eslint": "^5.16.0",
+    "papercss": "^1.6.1",
+    "prettier-eslint-cli": "^5.0.0",
+    "typescript": "^3.5.2",
+    "wired-elements": "^1.0.0"
+  }
+}

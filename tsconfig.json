@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "resolveJsonModule": true,
+    "outDir": "./out",
+    "declaration": true,
+    "declarationDir": "./out",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/*"]
+    },
+    "lib": [
+      "dom",
+      "esnext"
+     ]
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
