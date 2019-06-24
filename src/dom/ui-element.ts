@@ -3,7 +3,7 @@
  *  @brief      The UIElement module of the DOM subsystem.
  *  @author     Yiwei Chiao (ywchiao@gmail.com)
  *  @date       06/21/2018 created.
- *  @date       06/21/2019 last modified.
+ *  @date       06/23/2019 last modified.
  *  @version    0.1.0
  *  @since      0.1.0
  *  @copyright  MIT, © 2019 Yiwei Chiao
@@ -29,9 +29,7 @@ class UIElement {
    * @returns {this}
    */
   addClass(cls: string): UIElement {
-    if (!this.node.className.includes(cls)) {
-      this.node.className += this.node.className ? ` ${cls}` : cls;
-    } // fi
+    this.node.classList.add(cls);
 
     return this;
   }
@@ -215,10 +213,7 @@ class UIElement {
    * @returns {this}
    */
   removeClass(cls: string): UIElement {
-    this.node.className = this.node.className.replace(
-      RegExp(`[ ]*${cls}`, 'g'),
-      ''
-    );
+    this.node.classList.remove(cls);
 
     return this;
   }
@@ -335,27 +330,16 @@ class UIElement {
   }
 
   /**
-   * Swap this UIElement's fadeIn/fadeOut, slideIn/slideOut, ... CSS class.
+   * replace the UIElement's css class with new css class.
    *
    * @name swapClass
    * @function
-   * @param clsIn  class name with in/on/...
-   * @param clsOut class name with out/off/...
+   * @param oldCls class name to be removed.
+   * @param newCls class name to be added.
    * @returns {this}
    */
-  swapClass(clsIn: string, clsOut: string): UIElement {
-    if (this.node.className.includes(clsIn)) {
-      this.node.className = this.node.className.replace(
-        clsIn,
-        clsOut
-      );
-    }
-    else {
-      this.node.className = this.node.className.replace(
-        clsOut,
-        clsIn
-      );
-    } // fi
+  replaceClass(oldCls: string, newCls: string): UIElement {
+    this.node.classList.replace(oldCls, newCls);
 
     return this;
   }

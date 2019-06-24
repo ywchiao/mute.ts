@@ -16,10 +16,15 @@
 import { HTML } from "../dom/html";
 import { UIElement } from "../dom/ui-element";
 
+import { ControlBar } from "../ui/control-bar";
+
+let bar = new ControlBar();
+
 let content: UIElement = HTML.element("article")
   .setClass("site-content")
   .setCSSProperty("backgroundColor", "#fffaf0")
-  .appendNode(HTML.h4("this is我的 a test").setClass("mute-font").node);
+  .appendNode(HTML.h4("this is我的 a test").setClass("mute-font").node)
+  .appendNode(bar.node);
 
  export { content };
 

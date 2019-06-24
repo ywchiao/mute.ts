@@ -7,6 +7,7 @@
     "watch": "tsc -w",
     "format": "prettier-eslint --write 'src/**/*.ts'",
     "lint": "eslint --fix src > log/eslint.log",
+    "postcss": "postcss src/**/*.css --base src --dir assets",
     "start": "npm run build && electron ./out/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
