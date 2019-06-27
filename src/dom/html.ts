@@ -3,7 +3,7 @@
  *  @brief      The HTML object of the DOM module.
  *  @author     Yiwei Chiao (ywchiao@gmail.com)
  *  @date       06/21/2019 created.
- *  @date       06/21/2019 last modified.
+ *  @date       06/25/2019 last modified.
  *  @version    0.1.0
  *  @since      0.1.0
  *  @copyright  MIT, © 2019 Yiwei Chiao
@@ -11,6 +11,7 @@
  *
  *  The HTML object of the DOM module.
  */
+"use strict";
 
 import { UIElement } from "./ui-element";
 

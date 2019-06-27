@@ -3,7 +3,7 @@
  *  @brief      The content module of the App subsystem.
  *  @author     Yiwei Chiao (ywchiao@gmail.com)
  *  @date       06/21/2019 created.
- *  @date       06/21/2019 last modified.
+ *  @date       06/25/2019 last modified.
  *  @version    0.1.0
  *  @since      0.1.0
  *  @copyright  MIT, © 2019 Yiwei Chiao
@@ -16,15 +16,19 @@
 import { HTML } from "../dom/html";
 import { UIElement } from "../dom/ui-element";
 
-import { ControlBar } from "../ui/control-bar";
-
-let bar = new ControlBar();
+import { contentPane } from "../ui/content-pane";
+import { controlPane } from "../ui/control-pane";
 
 let content: UIElement = HTML.element("article")
-  .setClass("site-content")
-// .setCSSProperty("backgroundColor", "#fffaf0")
-  .appendNode(HTML.h4("this is我的 a test").setClass("mute-font").node)
-  .appendNode(bar.node);
+  .setStyle(`
+    background-color: #2e1e0e;
+    display: flex;
+    flex-flow: column;
+    flex: 1 0 auto;
+    padding: 1rem;
+  `)
+  .appendNode(contentPane.node)
+  .appendNode(controlPane.node);
 
  export { content };
 

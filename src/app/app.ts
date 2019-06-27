@@ -3,7 +3,7 @@
  *  @brief      The App module of the App subsystem.
  *  @author     Yiwei Chiao (ywchiao@gmail.com)
  *  @date       06/21/2019 created.
- *  @date       06/21/2019 last modified.
+ *  @date       06/25/2019 last modified.
  *  @version    0.1.0
  *  @since      0.1.0
  *  @copyright  MIT, © 2019 Yiwei Chiao
@@ -11,6 +11,7 @@
  *
  *  The App module of the App subsystem.
  */
+"use strict";
 
 import { HTML } from "../dom/html";
 import { UIElement } from "../dom/ui-element";
@@ -29,7 +30,14 @@ class App {
   private _header: UIElement;
 
   constructor() {
-    this._body = HTML.element("body").setClass("flex-container");
+    this._body = HTML.element("body")
+      .setStyle(`
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        flex-wrap: nowrap;
+      `);
 
     this.node = this._body.node;
   }

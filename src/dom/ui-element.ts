@@ -2,8 +2,8 @@
  *  @file       ui-element.ts
  *  @brief      The UIElement module of the DOM subsystem.
  *  @author     Yiwei Chiao (ywchiao@gmail.com)
- *  @date       06/21/2018 created.
- *  @date       06/23/2019 last modified.
+ *  @date       06/21/2019 created.
+ *  @date       06/25/2019 last modified.
  *  @version    0.1.0
  *  @since      0.1.0
  *  @copyright  MIT, © 2019 Yiwei Chiao
@@ -11,7 +11,7 @@
  *
  *  The UIElement module of the DOM subsystem.
  */
-'use strict';
+"use strict";
 
 class UIElement {
   readonly node: HTMLElement;
@@ -68,7 +68,7 @@ class UIElement {
   }
 
   /**
-   * Append the specified UIElement as this element's child element.
+   * Append the specified UIElement as this element"s child element.
    *
    * @name appendHTMLElement
    * @function
@@ -88,7 +88,7 @@ class UIElement {
   }
 
   /**
-   * Append specifed node as this element's new child node.
+   * Append specifed node as this element"s new child node.
    *
    * @name appendNode
    * @function
@@ -116,7 +116,7 @@ class UIElement {
   }
 
   /**
-   * Return the specified attribute value of this UIElement's node.
+   * Return the specified attribute value of this UIElement"s node.
    *
    * @name getAttribute
    * @function
@@ -128,11 +128,11 @@ class UIElement {
   }
 
   /**
-   * Return the specified property value of this UIElement's node.
+   * Return the specified property value of this UIElement"s node.
    *
    * @name getProperty
    * @function
-   * @param property The HTMLElement's property to fetch.
+   * @param property The HTMLElement"s property to fetch.
    * @returns {string}
    */
   getProperty(property: string): string {
@@ -140,7 +140,7 @@ class UIElement {
   }
 
   /**
-   * Insert the passed-in node as this UIElement's first child node.
+   * Insert the passed-in node as this UIElement"s first child node.
    *
    * @name insertNode
    * @function
@@ -161,19 +161,19 @@ class UIElement {
    * @returns {boolean}
    */
   isVisible(): boolean {
-    return !(this.node.style.display === 'none');
+    return !(this.node.style.display === "none");
   }
 
   /**
-   * Helper function for common 'click' event-listener.
+   * Helper function for common "click" event-listener.
    *
    * @name onClick
    * @function
-   * @param fn The 'click' event-listener to be set.
+   * @param fn The "click" event-listener to be set.
    * @returns {this}
    */
   onClick(fn: (this: void, e: Event) => void): UIElement {
-    this.node.addEventListener('click', fn);
+    this.node.addEventListener("click", fn);
 
     return this;
   }
@@ -191,7 +191,7 @@ class UIElement {
   }
 
   /**
-   * Remove the specified HTML attribute from this UIElement's node.
+   * Remove the specified HTML attribute from this UIElement"s node.
    *
    * @name removeAttribute
    * @function
@@ -205,7 +205,7 @@ class UIElement {
   }
 
   /**
-   * Remove the specified CSS class from this UIElement's node.
+   * Remove the specified CSS class from this UIElement"s node.
    *
    * @name removeClass
    * @function
@@ -219,7 +219,7 @@ class UIElement {
   }
 
   /**
-   * Remove the specified child node from this UIElement's node.
+   * Remove the specified child node from this UIElement"s node.
    *
    * @name removeNode
    * @function
@@ -228,6 +228,21 @@ class UIElement {
    */
   removeNode(node: HTMLElement): UIElement {
     this.node.removeChild(node);
+
+    return this;
+  }
+
+  /**
+   * replace the UIElement"s css class with new css class.
+   *
+   * @name swapClass
+   * @function
+   * @param oldCls class name to be removed.
+   * @param newCls class name to be added.
+   * @returns {this}
+   */
+  replaceClass(oldCls: string, newCls: string): UIElement {
+    this.node.classList.replace(oldCls, newCls);
 
     return this;
   }
@@ -257,7 +272,7 @@ class UIElement {
   }
 
   /**
-   * Setting the HTML attribute of this UIElement's node.
+   * Setting the HTML attribute of this UIElement"s node.
    *
    * @name setAttribute
    * @function
@@ -272,7 +287,7 @@ class UIElement {
   }
 
   /**
-   * Set the specified CSS class to this UIElement's node.
+   * Set the specified CSS class to this UIElement"s node.
    *
    * @name setClass
    * @function
@@ -286,7 +301,7 @@ class UIElement {
   }
 
   /**
-   * Setting the CSS property of this UIElement's node.
+   * Setting the CSS property of this UIElement"s node.
    *
    * @name setCSSProperty
    * @function
@@ -315,11 +330,11 @@ class UIElement {
   }
 
   /**
-   * Setting the HTML element's property for this UIElement's node.
+   * Setting the HTML element"s property for this UIElement"s node.
    *
    * @name setProperty
    * @function
-   * @param property The HTMLElement's property to be set.
+   * @param property The HTMLElement"s property to be set.
    * @param value The property value.
    * @returns {this}
    */
@@ -330,19 +345,36 @@ class UIElement {
   }
 
   /**
-   * replace the UIElement's css class with new css class.
+   * Setting the HTML element"s CSS style by dynamicly creating a
+   * `style` HTMLElement and a randomly generated CSS ClassName for
+   * the passed-in style descriptions.
    *
-   * @name swapClass
+   * @name setStyle
    * @function
-   * @param oldCls class name to be removed.
-   * @param newCls class name to be added.
+   * @param css: The CSS style block.
    * @returns {this}
    */
-  replaceClass(oldCls: string, newCls: string): UIElement {
-    this.node.classList.replace(oldCls, newCls);
+  setStyle(css: string): UIElement {
+    this.node.className = hexID();
+
+    let style = document.createElement("style");
+
+    style.textContent = `.${this.node.className}{${css}}`;
+
+    document.head.appendChild(style);
 
     return this;
   }
+}
+
+let hexID = (): string => {
+  let hex = "mu-";
+
+  for (let i = 0; i < 4; i++) {
+    hex += "0123456789abcdef"[Math.floor(Math.random() * 16)];
+  }
+
+  return hex;
 }
 
 export { UIElement };
