@@ -3,7 +3,7 @@
  *  @brief      The MainTab module of the UI subsystem.
  *  @author     Yiwei Chiao (ywchiao@gmail.com)
  *  @date       06/27/2019 created.
- *  @date       06/27/2019 last modified.
+ *  @date       06/28/2019 last modified.
  *  @version    0.1.0
  *  @since      0.1.0
  *  @copyright  MIT, © 2019 Yiwei Chiao
@@ -25,7 +25,12 @@ class MainTab extends UIElement {
         background-color: green;
         height: 100%;
       `);
-  }
+  } // constructor
+
+  update(content: string): UIElement {
+
+    return this;
+  } // update
 } // MainTab
 
 let mainTab = new MainTab();
