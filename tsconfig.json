@@ -8,17 +8,11 @@
     "resolveJsonModule": true,
     "outDir": "./out",
     "declaration": true,
+    "declarationMap": true,
     "declarationDir": "./out",
     "baseUrl": ".",
     "paths": {
       "*": ["node_modules/*"]
-    },
-    "lib": [
-      "dom",
-      "esnext"
-     ]
-  },
-  "include": [
-    "src/**/*"
+    }
   ]
 }

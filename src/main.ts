@@ -1,8 +1,22 @@
+/**
+ *  @file       main.ts
+ *  @brief      The entry module of the Mute.
+ *  @author     Yiwei Chiao (ywchiao@gmail.com)
+ *  @date       06/20/2019 created.
+ *  @date       07/03/2019 last modified.
+ *  @version    0.1.0
+ *  @since      0.1.0
+ *  @copyright  MIT, © 2019 Yiwei Chiao
+ *  @details
+ *
+ *  The entry module of the Mute.
+ */
+"use strict";
 
 import { app, BrowserWindow } from "electron";
 import * as path from "path";
 
-let mainWindow: Electron.BrowserWindow;
+let mainWindow: Electron.BrowserWindow | null;
 
 function createWindow() {
     mainWindow = new BrowserWindow({
@@ -13,7 +27,7 @@ function createWindow() {
         }
     });
 
-    mainWindow.loadFile(path.join(__dirname, "../app/index.html"));
+    mainWindow.loadFile(path.join(__dirname, "../index.html"));
 
     mainWindow.webContents.openDevTools();
 

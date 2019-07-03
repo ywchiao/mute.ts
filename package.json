@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "An electron based  mud client for Muted.",
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
+    "build": "tsc -b",
+    "watch": "tsc -b -w src/main",
     "format": "prettier-eslint --write 'src/**/*.ts'",
     "lint": "eslint --fix src > log/eslint.log",
     "start": "npm run build && electron ./out/main.js",

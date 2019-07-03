@@ -3,7 +3,7 @@
  *  @brief      The HTML object of the DOM module.
  *  @author     Yiwei Chiao (ywchiao@gmail.com)
  *  @date       06/21/2019 created.
- *  @date       06/25/2019 last modified.
+ *  @date       07/02/2019 last modified.
  *  @version    0.1.0
  *  @since      0.1.0
  *  @copyright  MIT, © 2019 Yiwei Chiao
@@ -23,7 +23,7 @@ interface HtmlElement {
   li(this: HtmlElement, text: string): UIElement;
   option(this: void, text: string): UIElement;
   p(this: HtmlElement, text: string): UIElement;
-  query(this: void, selector: string): HTMLElement;
+  query(this: void, selector: string): HTMLElement | null;
   section(this: void): UIElement;
   span(this: HtmlElement, text: string): UIElement;
   textNode(this: HtmlElement, tag: string, text: string): UIElement;
@@ -60,7 +60,7 @@ let HTML: HtmlElement = {
     return this.textNode('p', text);
   },
 
-  query: function (this: void, selector: string): HTMLElement {
+  query: function (this: void, selector: string): HTMLElement | null {
     return document.body.querySelector(selector);
   },
 

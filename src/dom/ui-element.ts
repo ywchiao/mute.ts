@@ -3,7 +3,7 @@
  *  @brief      The UIElement module of the DOM subsystem.
  *  @author     Yiwei Chiao (ywchiao@gmail.com)
  *  @date       06/21/2019 created.
- *  @date       06/25/2019 last modified.
+ *  @date       07/02/2019 last modified.
  *  @version    0.1.0
  *  @since      0.1.0
  *  @copyright  MIT, © 2019 Yiwei Chiao
@@ -123,7 +123,7 @@ class UIElement {
    * @param attribute The HTML attribute value to be returned.
    * @returns {string}
    */
-  getAttribute(attribute: string): string {
+  getAttribute(attribute: string): string | null {
     return this.node.getAttribute(attribute);
   }
 
@@ -186,7 +186,7 @@ class UIElement {
    * @param selector
    * @returns {node}
    */
-  query(selector: string): HTMLElement {
+  query(selector: string): HTMLElement | null {
     return this.node.querySelector(selector);
   }
 

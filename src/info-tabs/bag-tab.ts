@@ -1,15 +1,15 @@
 /**
  *  @file       bag-tab.ts
- *  @brief      The BagTab module of the UI subsystem.
+ *  @brief      The BagTab module of the InfoTabs subsystem.
  *  @author     Yiwei Chiao (ywchiao@gmail.com)
  *  @date       06/27/2019 created.
- *  @date       06/27/2019 last modified.
+ *  @date       07/02/2019 last modified.
  *  @version    0.1.0
  *  @since      0.1.0
  *  @copyright  MIT, © 2019 Yiwei Chiao
  *  @details
  *
- *  The BagTab module of the UI subsystem.
+ *  The BagTab module of the InfoTabs subsystem.
  */
 "use strict";
 
@@ -26,10 +26,10 @@ class BagTab extends UIElement {
         height: 100%;
       `);
   }
-} // BagTab
+}
 
 let bagTab = new BagTab();
 
 export { bagTab }
 
-// ui/bag-tab.ts
+// info-tabs/bag-tab.ts
