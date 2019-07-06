@@ -3,7 +3,7 @@
  *  @brief      The InputArea module of the ControlPane subsystem.
  *  @author     Yiwei Chiao (ywchiao@gmail.com)
  *  @date       06/25/2019 created.
- *  @date       07/02/2019 last modified.
+ *  @date       07/05/2019 last modified.
  *  @version    0.1.0
  *  @since      0.1.0
  *  @copyright  MIT, © 2019 Yiwei Chiao
@@ -15,6 +15,8 @@
 
 import { UIElement } from "../dom/ui-element";
 
+import { channel } from "../net/channel";
+
 class InputField extends UIElement {
   constructor() {
     super("wired-input");
@@ -24,7 +26,13 @@ class InputField extends UIElement {
         background-color: red;
         width: inherit;
       `)
-      .setAttribute("placeholder", "請輸入[指令] (如: Help) 或聊天訊息");
+      .setAttribute("placeholder", "請輸入[指令] (如: Help) 或聊天訊息")
+      .addListener("change", e => {
+        let el = <HTMLInputElement>e.srcElement;
+
+        channel.send(el.value);
+        el.value = ""
+      });
   }
 }
 

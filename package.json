@@ -4,7 +4,7 @@
   "description": "An electron based  mud client for Muted.",
   "scripts": {
     "build": "tsc -b",
-    "watch": "tsc -b -w src/main",
+    "watch": "tsc -b -w",
     "format": "prettier-eslint --write 'src/**/*.ts'",
     "lint": "eslint --fix src > log/eslint.log",
     "start": "npm run build && electron ./out/main.js",
