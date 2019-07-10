@@ -3,7 +3,7 @@
  *  @brief      The RoomUpdater module of the Control subsystem.
  *  @author     Yiwei Chiao (ywchiao@gmail.com)
  *  @date       07/02/2019 created.
- *  @date       07/02/2019 last modified.
+ *  @date       07/09/2019 last modified.
  *  @version    0.1.0
  *  @since      0.1.0
  *  @copyright  MIT, © 2019 Yiwei Chiao

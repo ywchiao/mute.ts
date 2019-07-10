@@ -29,7 +29,7 @@
     "eslint": "^5.16.0",
     "papercss": "^1.6.1",
     "prettier-eslint-cli": "^5.0.0",
-    "typescript": "^3.5.2",
+    "typescript": "^3.5.3",
     "wired-elements": "^1.0.0"
   }
 }
