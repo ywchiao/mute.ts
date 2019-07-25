@@ -23,9 +23,9 @@
   "license": "MIT",
   "devDependencies": {
     "@types/css-font-loading-module": "0.0.2",
-    "@typescript-eslint/eslint-plugin": "^1.11.0",
-    "@typescript-eslint/parser": "^1.11.0",
-    "electron": "^5.0.6",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "electron": "^5.0.8",
     "eslint": "^5.16.0",
     "papercss": "^1.6.1",
     "prettier-eslint-cli": "^5.0.0",

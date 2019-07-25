@@ -3,7 +3,7 @@
  *  @brief      The RoomUpdater module of the Control subsystem.
  *  @author     Yiwei Chiao (ywchiao@gmail.com)
  *  @date       07/02/2019 created.
- *  @date       07/09/2019 last modified.
+ *  @date       07/23/2019 last modified.
  *  @version    0.1.0
  *  @since      0.1.0
  *  @copyright  MIT, © 2019 Yiwei Chiao
@@ -22,7 +22,7 @@ class RoomUpdater {
 
   update(): RoomUpdater {
     http
-      .fetch("http://127.0.0.1:8080/view/inn")
+      .fetch("http://120.101.58.19:4004/view/inn")
       .then(res => {
         console.log(JSON.stringify(res, null, 2));
 
