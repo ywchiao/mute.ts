@@ -3,7 +3,7 @@
  *  @brief      The Channel module of the Net subsystem.
  *  @author     Yiwei Chiao (ywchiao@gmail.com)
  *  @date       07/05/2019 created.
- *  @date       07/24/2019 last modified.
+ *  @date       09/10/2019 last modified.
  *  @version    0.1.0
  *  @since      0.1.0
  *  @copyright  MIT, © 2019 Yiwei Chiao
@@ -39,8 +39,8 @@ class Channel {
   }
 }
 
-//let channel = new Channel("localhost", "4004");
-let channel = new Channel("120.101.58.19", "4004");
+let channel = new Channel("localhost", "4004");
+//let channel = new Channel("120.101.58.19", "4004");
 
 export { channel };
 
