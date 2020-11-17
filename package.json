@@ -23,13 +23,13 @@
   "license": "MIT",
   "devDependencies": {
     "@types/css-font-loading-module": "0.0.4",
-    "@typescript-eslint/eslint-plugin": "^4.2.0",
-    "@typescript-eslint/parser": "^4.2.0",
-    "electron": "^10.1.2",
-    "eslint": "^7.9.0",
-    "papercss": "^1.8.0",
+    "@typescript-eslint/eslint-plugin": "^4.8.0",
+    "@typescript-eslint/parser": "^4.8.0",
+    "electron": "^10.1.5",
+    "eslint": "^7.13.0",
+    "papercss": "^1.8.1",
     "prettier-eslint-cli": "^5.0.0",
-    "typescript": "^4.0.3",
+    "typescript": "^4.0.5",
     "wired-elements": "^2.1.2"
   },
   "dependencies": {}
